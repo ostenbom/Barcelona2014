@@ -3,16 +3,16 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.barcelonaismedia.Barcelona2014"
+        id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
     <name>Barcelona2014</name>
 
     <description>
-        Barcelona2014 is the official app of the 76th International session of the European Youth Parliament in Barcelona.
+        App for the international session in barcelona
     </description>
 
-    <author href="http://www.barcelonaismedia.com" email="contact@barcelonaismedia.com">
+    <author href="http://www.barcelonaismedia.com/" email="contact@barcelonaismedia.com">
         Oliver Stenbom
     </author>
 

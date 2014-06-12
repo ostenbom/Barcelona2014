@@ -1,4 +1,4 @@
-C:\Users\Oliver\Barcelona2014\platforms\android\ant-gen\com\barcelonaismedia\Barcelona2014\R.java \
+C:\Users\Oliver\Barcelona2014\platforms\android\ant-gen\com\phonegap\helloworld\R.java \
  : C:\Users\Oliver\Barcelona2014\platforms\android\res\drawable\icon.png \
 C:\Users\Oliver\Barcelona2014\platforms\android\res\drawable-hdpi\icon.png \
 C:\Users\Oliver\Barcelona2014\platforms\android\res\drawable-ldpi\icon.png \

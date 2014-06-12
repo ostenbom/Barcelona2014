@@ -1,49 +1,34 @@
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
-<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="cleartype" content="on">
-
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
-        <link rel="apple-touch-icon-precomposed" href="#">
-        <link rel="shortcut icon" href="#">
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="#">
-        <meta name="msapplication-TileColor" content="#222222">
-
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/jquery-mobile.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-    	
-    <div id="home-page" data-role="page">
-    <div id="home-header" data-role="header">
-    	<h1><i class="icon-home"></i> Header</h1>
-    </div><!-- /#header -->
-    
-    <div id="home-content" data-role="content">
-    	<p>Content</p>
-    	<a data-role="button" data-transition="flip" href="about.html">Button</a>
-    </div><!-- /#home-page -->
-    
-    <div id="footer" data-role="footer">
-    	<h1><i class="icon-coffee"></i> 2013 - jQuery Mobile starting template</h1>
-    </div><!-- /#footer -->
-    </div>
-
-	  <script src="js/jquery.js"></script>
-	  <script src="js/jquery-mobile.js"></script>
-	  <script src="js/script.js"></script>
-    </body>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile: Theme Download</title>
+	<link rel="stylesheet" href="themes/barcelona.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.2/jquery.mobile.custom.structure.css" />
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.4.2/jquery.mobile.custom.js"></script>
+</head>
+<body>
+	<div data-role="page" data-theme="a">
+    <div data-role="panel" id="homepanel" data-display="reveal" data-role="panel">
+    This is a panel
+</div><!-- /panel -->
+		<div data-role="header" data-position="inline">
+			<a class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini" href="#homepanel">Reveal</a><h1>Barcelona 2014</h1>
+		</div>
+		<div data-role="content" data-theme="a">	
+			<p>This is content color swatch "A" and a preview of a <a href="http://www.barcelonaismedia.com/" class="ui-link">link</a>.</p>
+			<label for="slider1">This is how awesome you are:</label>
+			<input type="range" name="slider1" id="slider1" value="50" min="0" max="100" data-theme="a" />
+			<fieldset data-role="controlgroup"  data-type="horizontal" data-role="fieldcontain">
+			<legend>Atomic bomb:</legend>
+			<input type="radio" name="radio-choice-a1" id="radio-choice-a1" value="on" checked="checked" />
+			<label for="radio-choice-a1">On</label>
+			<input type="radio" name="radio-choice-a1" id="radio-choice-b1" value="off"  />
+			<label for="radio-choice-b1">Off</label>
+			</fieldset>
+		</div>
+	</div>
+</body>
 </html>
