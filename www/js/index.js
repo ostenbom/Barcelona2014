@@ -17,7 +17,6 @@
  * under the License.
  */
 var app = {
-    // Test row
     // Application Constructor
     initialize: function() {
         this.bindEvents();
