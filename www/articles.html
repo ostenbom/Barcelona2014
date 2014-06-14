@@ -25,25 +25,12 @@
 
 </script>
     
-    <script type="text/javascript">
-    //wait for page to load
-    $(document).ready(function(){
-      // Extract the text from the template .html() is the jquery helper method for that
-      var raw_template = $('#articles-template').html();
-      // Compile that into an handlebars template
-      var template = Handlebars.compile(raw_template);
-      // Retrieve the placeHolder where the Posts will be displayed 
-      var placeHolder = $("#articleHandlebars");
-      // Fetch all Blog Posts data from server in JSON
-      $.get("http://www.barcelonaismedia.com/api/get_posts/",function(data,status,xhr){
-        $.each(data,function(index,element){
-          // Generate the HTML for each post
-          var html = template(element);
-          // Render the posts into the page
-          placeHolder.append(html);
-        });
-      });
-    });
+    <script>
+$.getJSON('http://www.barcelonaismedia.com/api/get_posts/', function(posts) {
+  $('.result').html('<h2>' + posts.title + '</h2>'
+    + '<p>' + posts.content[1] + '</p>');
+});
+
   </script>  
     
     
@@ -74,27 +61,22 @@
 		<div data-role="header" data-position="inline">
 			<a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-bars" href="#homepanel">No text</a><h1>Barcelona 2014</h1>
 		</div>
-        
-<div id="images"></div>
- 
+
+<div id="images">
+
+</div>
 <script>
-(function() {
-    var BarcelonaAPI = "http://www.barcelonaismedia.com/api/get_posts/";
-    $.ajax({
-        dataType: "json",
-        url: BarcelonaAPI,
-        data: "GET",
-        success: function(data){
-           console.log(data);
-        },
-    });
-})();
+Handlebars.registerHelper('http://www.barcelonaismedia.com/api/get_posts/', function(items, options) {
+  var out = "<ul>";
+
+  for(var i=0, l=items.length; i<l; i++) {
+    out = out + "<li>" + options.fn(items[i]) + "</li>";
+  }
+
+  return out + "</ul>";
+});
 </script>
 
-<div data-role="content" id="listview-content" data-theme="a">
-	<p>
-    	<div id="articleHandlebars"> </div>
-    </p>
 </div>
 </body>
 </html>
