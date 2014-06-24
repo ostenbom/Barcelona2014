@@ -13,11 +13,33 @@
 </head>
 <body>
 	<div data-role="page" data-theme="a">
+    <div data-role="panel" id="homepanel" data-display="reveal" data-role="panel">
+    <div data-role="collapsibleset" data-inset="false">
+    <div data-role="collapsible">
+        <h3>Media team</h3>
+        <ul data-role="listview" data-inset="false">
+			<li><a href="articles.html">Articles</a></li>
+      	  <li><a href="index.html">Vidoes</a></li>
+      	  <li><a href="index.html">Photos</a></li>
+        </ul>
+    </div>
+    <div data-role="collapsible">
+        <h3>Session</h3>
+        <ul data-role="listview" data-inset="false">
+			<li><a href="schedule.html">Schedule</a></li>
+			<li><a href="index.html">Maps</a></li>
+			<li><a href="index.html">Contact</a></li>
+        </ul>
+    </div>
+
+</div>
+</div><!-- /panel -->
 		<div data-role="header" data-position="inline">
 			<a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-bars" href="#homepanel">No text</a>
 				<h1>Barcelona 2014</h1>
 		</div>
-        <div data-role="collapsibleset" data-theme="a" data-content-theme="a">
+		<div data-role="content" data-theme="a">	
+			<div data-role="collapsibleset" data-theme="a" data-content-theme="a">
     <div data-role="collapsible">
         <h3>Friday the 25th</h3>
     <p>All day: Arrival of Delegations <br> Evening: Welcome barbecue at “Vilar Rural de Cardona”</p>
@@ -72,28 +94,7 @@ Evening: Farewell Gala Dinner</p>
     <p>All day: Departures</p>
     </div>
 </div>  
-
-       <div data-role="panel" id="homepanel" data-display="reveal" data-role="panel">
-    <div data-role="collapsibleset" data-inset="false">
-    <div data-role="collapsible">
-        <h3>Media team</h3>
-        <ul data-role="listview" data-inset="false">
-			<li><a href="articles.html">Articles</a></li>
-      	  <li><a href="index.html">Vidoes</a></li>
-      	  <li><a href="index.html">Photos</a></li>
-        </ul>
-    </div>
-    <div data-role="collapsible">
-        <h3>Session</h3>
-        <ul data-role="listview" data-inset="false">
-			<li><a href="schedule.html">Schedule</a></li>
-			<li><a href="index.html">Maps</a></li>
-			<li><a href="index.html">Contact</a></li>
-        </ul>
-    </div>
-
-</div>
-</div><!-- /panel -->  
-        </div><!-- /page -->
+		</div>
+	</div>
 </body>
 </html>

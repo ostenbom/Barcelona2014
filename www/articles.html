@@ -12,26 +12,7 @@
 	<script src="js/jquery.mobile-1.4.2/jquery.mobile.custom.js"></script>
 	<script src="js/index.js"></script>
     
-    <script id="articles-template" type="text/x-handlebars-template">
-<ul data-role="listview" data-inset="true">
-	{{#posts}}
-    	<li><a href="#">
-        	<img src="{{attachements.images.thumbnail.url}}">
-    	<h2>{{title}}</h2>
-	    <p>{{author.name}}</p></a>
-    	</li>
-	{{/posts}}
-</ul>
 
-</script>
-    
-    <script>
-$.getJSON('http://www.barcelonaismedia.com/api/get_posts/', function(posts) {
-  $('.result').html('<h2>' + posts.title + '</h2>'
-    + '<p>' + posts.content[1] + '</p>');
-});
-
-  </script>  
     
     
 </head>
@@ -65,17 +46,6 @@ $.getJSON('http://www.barcelonaismedia.com/api/get_posts/', function(posts) {
 <div id="images">
 
 </div>
-<script>
-Handlebars.registerHelper('http://www.barcelonaismedia.com/api/get_posts/', function(items, options) {
-  var out = "<ul>";
-
-  for(var i=0, l=items.length; i<l; i++) {
-    out = out + "<li>" + options.fn(items[i]) + "</li>";
-  }
-
-  return out + "</ul>";
-});
-</script>
 
 </div>
 </body>
