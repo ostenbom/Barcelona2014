@@ -12,7 +12,19 @@
 	<script src="js/jquery.mobile-1.4.2/jquery.mobile.custom.js"></script>
 	<script src="js/index.js"></script>
     
-
+<script>
+ $.ajax({
+    url: 'test.json',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data){
+      console.log(data);
+    },
+    error: function(data){
+      console.log(data);
+    }
+  });
+</script>
     
     
 </head>
