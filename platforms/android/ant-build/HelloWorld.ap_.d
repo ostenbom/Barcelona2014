@@ -25,8 +25,11 @@ C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\inde
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\phonegap.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\schedule.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\spec \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\spec.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\standard.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\test.json \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\themes \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\index.css \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\images\ajax-loader.gif \
@@ -134,10 +137,12 @@ C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\imag
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\images\icons-png\video-black.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\images\icons-png\video-white.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\logo.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\articles.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\handlebars-v1.3.0.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\index.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2 \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\test.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.min.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.structure.css \

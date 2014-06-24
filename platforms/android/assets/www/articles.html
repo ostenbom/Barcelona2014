@@ -11,46 +11,20 @@
 	<script src="js/handlebars-v1.3.0.js"></script>
 	<script src="js/jquery.mobile-1.4.2/jquery.mobile.custom.js"></script>
 	<script src="js/index.js"></script>
+    <script src="js/articles.js"></script>		
     
-    <script id="articles-template" type="text/x-handlebars-template">
-<ul data-role="listview" data-inset="true">
-	{{#posts}}
-    	<li><a href="#">
-        	<img src="{{attachements.images.thumbnail.url}}">
-    	<h2>{{title}}</h2>
-	    <p>{{author.name}}</p></a>
-    	</li>
-	{{/posts}}
+<script id="articles-template" type="text/x-handlebars-template">
+<ul id="listv" data-role="listview" data-inset="false">
+  {{#posts}} 
+	<li><a href="#" onClick="alert('{{title}}')"><img src="{{thumbnail}}"><h1>{{title}}</h1><p>{{excerpt}}</p></a></li>
+  {{/posts}}
 </ul>
-
-</script>
-    
-    <script type="text/javascript">
-    //wait for page to load
-    $(document).ready(function(){
-      // Extract the text from the template .html() is the jquery helper method for that
-      var raw_template = $('#articles-template').html();
-      // Compile that into an handlebars template
-      var template = Handlebars.compile(raw_template);
-      // Retrieve the placeHolder where the Posts will be displayed 
-      var placeHolder = $("#articleHandlebars");
-      // Fetch all Blog Posts data from server in JSON
-      $.get("http://www.barcelonaismedia.com/api/get_posts/",function(data,status,xhr){
-        $.each(data,function(index,element){
-          // Generate the HTML for each post
-          var html = template(element);
-          // Render the posts into the page
-          placeHolder.append(html);
-        });
-      });
-    });
-  </script>  
-    
+</script>	
     
 </head>
 <body>
-	<div data-role="page" data-theme="a">
-    <div data-role="panel" id="homepanel" data-display="reveal" data-role="panel">
+	<div data-role="page" data-theme="a" id="listview-page">
+<div data-role="panel" id="homepanel" data-display="reveal" data-role="panel">
     <div data-role="collapsibleset" data-inset="false">
     <div data-role="collapsible">
         <h3>Media team</h3>
@@ -63,7 +37,7 @@
     <div data-role="collapsible">
         <h3>Session</h3>
         <ul data-role="listview" data-inset="false">
-			<li><a href="index.html">Programme</a></li>
+			<li><a href="schedule.html">Schedule</a></li>
 			<li><a href="index.html">Maps</a></li>
 			<li><a href="index.html">Contact</a></li>
         </ul>
@@ -71,30 +45,19 @@
 
 </div>
 </div><!-- /panel -->
-		<div data-role="header" data-position="inline">
-			<a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-bars" href="#homepanel">No text</a><h1>Barcelona 2014</h1>
-		</div>
-        
-<div id="images"></div>
- 
-<script>
-(function() {
-  var BarcelonaAPI = "http://www.barcelonaismedia.com/api/get_posts/";
- $.ajax({
-  dataType: "json",
-  url: BarcelonaAPI,
-  data: "GET",
-  success: function(data){
-      console.log(data);
-    },
-});
-})();
-</script>
+	<div data-role="header" data-position="inline">
+		<a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-bars" href="#homepanel">No text</a><h1>Articles</h1>
+	</div><!-- /header -->
 
-<div data-role="content" id="listview-content" data-theme="a">
-	<p>
-    	<div id="articleHandlebars"> </div>
-    </p>
-</div>
+	<div data-role="content" id="listview-content">	
+		<p>
+		  <div id="articleHandlebars" data-demo-html="true"></div>
+		</p>		
+	</div><!-- /content -->
+
+	
+</div><!-- /page -->
+  
+
 </body>
 </html>
