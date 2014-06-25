@@ -13,17 +13,19 @@
 	<script src="js/index.js"></script>
     <script src="js/articles.js"></script>		
     
-<script id="articles-template" type="text/x-handlebars-template">
+
+    
+</head>
+<body>
+	<div data-role="page" data-theme="a" id="listview-page">
+    
+	    <script id="articles-template" type="text/x-handlebars-template">
 <ul id="listv" data-role="listview" data-inset="false">
   {{#posts}} 
 	<li><a href="{{url}}"><img src="{{thumbnail}}"><h1>{{title}}</h1><p>By {{author.name}}</p></a></li>
   {{/posts}}
 </ul>
 </script>	
-    
-</head>
-<body>
-	<div data-role="page" data-theme="a" id="listview-page">
 <div data-role="panel" id="homepanel" data-display="reveal" data-role="panel">
     <div data-role="collapsibleset" data-inset="false">
     <div data-role="collapsible">
@@ -51,12 +53,12 @@
 	</div><!-- /header -->
 
 	<div data-role="content" id="listview-content">	
+
 		<p>
 		  <div id="articleHandlebars" data-demo-html="true"></div>
 		</p>		
 	</div><!-- /content -->
 
-	
 </div><!-- /page -->
   
 
