@@ -20,6 +20,7 @@ function parseRSS() {
 function showData(data)
 {
  var source   = $("#articles-template").html();
+ 		source = source.replace(/(&#8217;)/g, "'")
   var template = Handlebars.compile(source);
   var html = template(data);
   $("#articleHandlebars").html(html);	

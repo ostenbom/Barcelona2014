@@ -16,7 +16,7 @@
 <script id="articles-template" type="text/x-handlebars-template">
 <ul id="listv" data-role="listview" data-inset="false">
   {{#posts}} 
-	<li><a href="#" onClick="alert('{{title}}')"><img src="{{thumbnail}}"><h1>{{title}}</h1><p>{{excerpt}}</p></a></li>
+	<li><a href="{{url}}"><img src="{{thumbnail}}"><h1>{{title}}</h1><p>By {{author.name}}</p></a></li>
   {{/posts}}
 </ul>
 </script>	
@@ -47,6 +47,7 @@
 </div><!-- /panel -->
 	<div data-role="header" data-position="inline">
 		<a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-bars" href="#homepanel">No text</a><h1>Articles</h1>
+     <!--   <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
 	</div><!-- /header -->
 
 	<div data-role="content" id="listview-content">	

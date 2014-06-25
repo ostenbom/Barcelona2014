@@ -1,4 +1,4 @@
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\HelloWorld.ap_ \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\Barcelona2014.ap_ \
  : C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable\icon.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-hdpi\icon.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-ldpi\icon.png \
