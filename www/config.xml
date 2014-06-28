@@ -97,6 +97,5 @@
     -->
 	<gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
 	<preference name="StatusBarOverlaysWebView" value="false" />
-	<preference name="StatusBarBackgroundColor" value="#333333" />
 
 </widget>
