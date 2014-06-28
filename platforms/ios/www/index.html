@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Barcelona 2014</title>
+	<link rel="stylesheet" href="theme/barcelona.min.css" />
+	<link rel="stylesheet" href="theme/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.2/jquery.mobile.custom.structure.css" />
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.4.2/jquery.mobile.custom.js"></script>
+    <script src="js/handlebars-v1.3.0.js"></script>
+	<script src="js/index.js"></script>
+    <script src="js/jquery.ui.map.full.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+</head>
+<body>
+
+
+
+
+	<div data-role="page" id="home" data-theme="a">
+    
+   		 <div data-role="panel" id="homepanel" data-display="reveal" data-theme="c">
+    <ul data-role="listview" data-theme="b">
+    	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
+        <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
+        <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
+        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+    </ul>
+		</div><!-- /panel -->
+        
+        
+		<div data-role="header" data-position="inline" >
+			<a class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#homepanel">No text</a>
+				<h1>Barcelona 2014</h1>
+              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
+		</div>
+        
+        
+		<div data-role="content" data-theme="a">	
+			<p>This is content color swatch "A" and a preview of a <a href="http://www.google.com/" class="ui-link">link</a>.</p>
+			<label for="slider1">This is how awesome you are:</label>
+			<input type="range" name="slider1" id="slider1" value="50" min="0" max="100" data-theme="a" />
+			<fieldset data-role="controlgroup"  data-type="horizontal" data-role="fieldcontain">
+			<legend>Atomic bomb:</legend>
+			<input type="radio" name="radio-choice-a1" id="radio-choice-a1" value="on" checked="checked" />
+			<label for="radio-choice-a1">On</label>
+			<input type="radio" name="radio-choice-a1" id="radio-choice-b1" value="off"  />
+			<label for="radio-choice-b1">Off</label>
+			</fieldset>
+		</div>
+	</div>
+    
+    
+    
+    
+    
+<div data-role="page" id="videos" data-theme="a">
+    
+   		 <div data-role="panel" id="videospanel" data-display="reveal" data-theme="c">
+    <ul data-role="listview" data-theme="b">
+    	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
+        <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
+        <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos">Videos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
+        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+    </ul>
+		</div><!-- /panel -->
+        
+        
+		<div data-role="header" data-position="inline" >
+			<a class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#videospanel">No text</a>
+				<h1>Videos</h1>
+              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
+		</div>
+        
+        
+		<div data-role="content" data-theme="a">	
+<ul data-role="listview" data-inset="true">
+    <li><a href="#">
+        <img src="img/ep1.png">
+    <h2>Episode 1</h2>
+    <p>Released on day 2</p></a>
+    </li>
+    <li><a href="#">
+        <img src="img/ep2.png">
+    <h2>Episode 2</h2>
+    <p>Released on day 6</p></a>
+    </li>
+    <li><a href="#">
+        <img src="img/ep3.png">
+    <h2>Episode 3</h2>
+    <p>Released on day 10</p></a>
+    </li>
+</ul>
+
+		</div>
+	</div>
+        
+    
+    
+    
+    
+<div data-role="page" id="maps" data-theme="a">
+
+    
+   		 <div data-role="panel" id="mapspanel" data-display="reveal" data-theme="c">
+    <ul data-role="listview" data-theme="b">
+    	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
+        <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
+        <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
+        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps">Maps</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+    </ul>
+		</div><!-- /panel -->
+        
+        
+		<div data-role="header" data-position="inline" >
+			<a class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#mapspanel">No text</a>
+				<h1>Maps</h1>
+              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
+		</div>
+    
+    
+ 
+        
+		<div data-role="content" data-theme="a">
+        <h3>Teambuilding Venue: Vilar Rural de Cardona</h3>
+
+<div id="map_canvas" style="height:300px; width:100%"></div>
+        <h3>Barcelona Accommodation: Residència Àgora</h3>
+<script>
+$(function() {
+    var poc = "41.439639,2.148895";
+    $('#map_barca').gmap({
+        'zoom': 7
+    }).bind('init', function(event, map) {
+        $('#map_barca').gmap('addMarker', {
+            'position': poc,
+            'bounds': true
+        }).click(function() {
+            content = 'The Barcelona Accommodation!';
+            $('#map_barca').gmap('openInfoWindow', {
+                'content': content
+            }, this);
+        });
+    });
+});
+</script>
+<div id="map_barca" style="height:300px; width:100%"></div> 
+
+		</div>
+	</div>
+    
+    
+    
+    
+    
+    
+        
+    
+    
+    
+    
+    
+    	<div data-role="page" id="articles" data-theme="a">
+        
+
+    
+   		 <div data-role="panel" id="articlespanel" data-display="reveal" data-theme="c">
+    <ul data-role="listview" data-theme="b">
+    	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
+        <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
+        <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
+        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+    </ul>
+		</div><!-- /panel -->
+        
+        
+		<div data-role="header" data-position="inline" >
+			<a class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#articlespanel">No text</a>
+				<h1>Barcelona 2014</h1>
+              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
+		</div>
+        
+        
+<div data-role="content">
+                <div class="example-wrapper" data-iscroll>
+                    <script id="movies-template" type="text/x-handlebars-template">
+                        {{#.}}
+                        <li><a data-id="{{this.id}}"><img src="{{this.thumbnail}}"/><h3>{{this.title}}</h3><p>By {{this.author.name}}</p></a></li>
+                        {{/.}}
+                    </script>                      
+                    <ul data-role="listview"  id="movie-list" data-theme="a">
+                        
+                    </ul>
+                </div>
+            </div>            
+        </div>
+        
+        
+        
+        
+        
+        <div data-role="page" id="headline">
+            <div data-theme="a" data-role="header">
+                <a href="#articles" class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-back ui-nodisc-icon" data-transition="slide" data-direction="reverse">Back</a>                        
+                <h3>
+                    Movie Info
+                </h3>
+            </div>        
+            <div data-role="content">
+                <script id="movie-template" type="text/x-handlebars-template">
+                    {{#.}}
+                    <li><img src="{{this.thumbnail}}"/></li>
+                    <li>Title: {{this.title}}</li>
+                    <li>Author : {{this.author.name}}</li>
+                    <li>Excerpt : {{this.excerpt}}</li>
+                    <li>Content : {{this.content}}</li>
+                    {{/.}}
+                </script>                  
+                <ul data-role="listview"  id="movie-data" data-theme="a">
+                    
+                </ul>
+            </div>
+    
+        </div>    
+    
+    
+    
+    <div data-role="page" id="schedule" data-theme="a">
+     <div data-role="panel" id="schedulepanel" data-display="reveal" data-theme="c">
+    <ul data-role="listview" data-theme="b">
+		<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
+		<li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
+        <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule">Schedule</a></li>
+        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+    </ul>
+    </ul>
+		</div><!-- /panel -->
+      	  <div data-role="header" data-position="inline" >
+			<a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#schedulepanel">No text</a>
+				<h1>Schedule</h1>
+              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
+			</div>
+    <div data-role="content" data-theme="a">	
+			<div data-role="collapsibleset" data-theme="a" data-content-theme="a">
+    <div data-role="collapsible">
+        <h3>Friday the 25th</h3>
+    <p>All day: Arrival of Delegations <br> Evening: Welcome barbecue at “Vilar Rural de Cardona”</p>
+    </div>
+    <div data-role="collapsible">
+        <h3>Saturday the 26th</h3>
+    <p>Morning: Opening of Teambuilding <br>
+Afternoon: Teambuilding <br>
+Evening: Eurovillage & Europe’s Night</p>
+    </div>
+     <div data-role="collapsible">
+        <h3>Sunday the 27th</h3>
+    <p>All day: Teambuilding <br>
+Transfer to Barcelona <br>
+Evening: Outdoor Movie Night</p>
+    </div>
+         <div data-role="collapsible">
+        <h3>Monday the 28th</h3>
+    <p>All day: Committee Work <br>
+Evening: Opening Ceremony & appetizers in Gaudinian Gardens</p>
+    </div>
+         <div data-role="collapsible">
+        <h3>Tuesday the 29th</h3>
+    <p>All day: Committee Work <br>
+Evening: Committee Dinners & Europe’s Got Talent</p>
+    </div>
+         <div data-role="collapsible">
+        <h3>Wednesday the 30th</h3>
+    <p>All day: Committee Work <br>
+Evening: Theme Party</p>
+    </div>
+         <div data-role="collapsible">
+        <h3>Thursday the 31st</h3>
+    <p>Morning: Day off in Barcelona <br>
+Afternoon: Committee Work <br>
+Evening: Euroconcert</p>
+    </div>
+         <div data-role="collapsible">
+        <h3>Friday the 1st</h3>
+    <p>Morning: Opening of the General Assembly <br>
+Afternoon: General Assembly <br>
+Evening: Mediterranean Night</p>
+    </div>
+         <div data-role="collapsible">
+        <h3>Saturday the 2nd</h3>
+    <p>Morning: General Assembly <br>
+Afternoon: Closing Ceremony <br>
+Evening: Farewell Gala Dinner</p>
+    </div>
+         <div data-role="collapsible">
+        <h3>Sunday the 3rd</h3>
+    <p>All day: Departures</p>
+    </div>
+</div>  
+		</div>
+    </div>
+</body>
+</html>
