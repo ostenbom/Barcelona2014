@@ -2203,6 +2203,7 @@ ol.ui-listview > li img:first-child + * ~ * {
 
 /* Panel */
 .ui-panel {
+	background-color: #191919;
 	width: 17em;
 	min-height: 100%;
 	max-height: none;

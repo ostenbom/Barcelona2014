@@ -47,3 +47,110 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+$(document).on('pagebeforeshow', '#listview-page', function(){
+    parseRSS(); 
+});
+ 
+
+$(function() {
+    var poi = "41.904080,1.666449";
+    $('#map_canvas').gmap({
+        'zoom': 7
+    }).bind('init', function(event, map) {
+        $('#map_canvas').gmap('addMarker', {
+            'position': poi,
+            'bounds': true
+        }).click(function() {
+            content = 'Teambuildning venue';
+            $('#map_canvas').gmap('openInfoWindow', {
+                'content': content
+            }, this);
+        });
+    });
+});
+
+$(document).on('pagebeforeshow', '#listview-page', function(){
+    parseRSS(); 
+});
+
+function parseRSS() {
+	 $.ajax({
+    url: 'http://www.barcelonaismedia.com/api/get_posts/',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data){
+      console.log(data);
+	  showData(data);
+    },
+    error: function(data){
+      console.log(data);
+	  alert('Network error has occurred please try again!');
+    }
+  });
+}
+
+function showData(data)
+{
+ var source   = $("#articles-template").html();
+  var template = Handlebars.compile(source);
+  var html = template(data);
+  $("#articleHandlebars").html(html);	
+  $("#listview-content").trigger('create');  
+  $("#listview-page").trigger('pagecreate');
+  $("#articleHandlebars ul").listview('refresh');
+  $("#articleHandlebars ul").listview().listview('refresh');
+ }
+ 
+ 
+ 
+ 
+ 
+ $(document).on('pageinit', '#articles', function(){      
+    
+            
+            
+            $.ajax({
+                url: "http://www.barcelonaismedia.com/api/get_posts/",
+                dataType: "jsonp",
+                async: true,
+                success: function (result) {
+                    ajax.parseJSONP(result);
+                },
+                error: function (request,error) {
+                    alert('Network error has occurred please try again!');
+                }
+            });          
+            
+});
+
+$(document).on('pagebeforeshow', '#headline', function(){      
+    $('#movie-data').empty();
+    $.each(movieInfo.result, function(i, row) {
+        if(row.id == movieInfo.id) {
+            var movieHandler = Handlebars.compile($("#movie-template").html());
+            $('#movie-data').html(movieHandler(row));                
+        } 
+    });          
+    $('#movie-data').listview('refresh');     
+});
+
+$(document).on('vclick', '#movie-list li a', function(){  
+    movieInfo.id = $(this).attr('data-id');
+    $.mobile.changePage( "#headline", { transition: "slide", changeHash: false });
+});
+
+var movieInfo = {
+    id : null,
+    result : null
+}
+
+var ajax = {  
+    parseJSONP:function(result){  
+        movieInfo.result = result.posts;
+        $('#movie-list').empty(); 
+        var movieListHandler = Handlebars.compile($("#movies-template").html());
+        $('#movie-list').html(movieListHandler(result.posts));         
+        $('#movie-list').listview('refresh');
+    }
+}
