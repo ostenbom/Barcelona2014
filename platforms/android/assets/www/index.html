@@ -7,9 +7,13 @@
 	<link rel="stylesheet" href="theme/barcelona.min.css" />
 	<link rel="stylesheet" href="theme/jquery.mobile.icons.min.css" />
 	<link rel="stylesheet" href="js/jquery.mobile-1.4.2/jquery.mobile.custom.structure.css" />
+    <!--<link rel="stylesheet" href="css/photoswipe.css" />-->
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile-1.4.2/jquery.mobile.custom.js"></script>
     <script src="js/handlebars-v1.3.0.js"></script>
+<!--    <script src="js/code-photoswipe-jQuery-1.0.11.min.js"></script>
+    <script src="js/simple-inheritance.min.js"></script>
+    <script src="js/jquery.animate-enhanced.min.js"></script> -->
 	<script src="js/index.js"></script>
     <script src="js/jquery.ui.map.full.min.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
@@ -26,7 +30,9 @@
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        &nbsp;
+        <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
         <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
@@ -52,6 +58,17 @@
 			<input type="radio" name="radio-choice-a1" id="radio-choice-b1" value="off"  />
 			<label for="radio-choice-b1">Off</label>
 			</fieldset>
+            &nbsp;
+            &nbsp;
+            
+            <ul data-role="listview">
+    <li>Acura</li>
+    <li>Audi</li>
+    <li>BMW</li>
+    <li>Cadillac</li>
+    <li>Ferrari</li>
+</ul>
+            
 		</div>
 	</div>
     
@@ -66,7 +83,9 @@
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos">Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        &nbsp;
+        <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
         <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
@@ -82,23 +101,150 @@
         
         
 		<div data-role="content" data-theme="a">	
+        <script type="text/javascript">
+//######################################################################################
+// Author: ricocheting.com
+// Version: v2.0
+// Date: 2011-03-31
+// Description: displays the amount of time until the "dateFuture" entered below.
+
+// NOTE: the month entered must be one less than current month. ie; 0=January, 11=December
+// NOTE: the hour is in 24 hour format. 0=12am, 15=3pm etc
+// format: dateFuture1 = new Date(year,month-1,day,hour,min,sec)
+// example: dateFuture1 = new Date(2003,03,26,14,15,00) = April 26, 2003 - 2:15:00 pm
+
+dateFuture1 = new Date(2014,6,25,18,00,00);
+
+// TESTING: comment out the line below to print out the "dateFuture" for testing purposes
+//document.write(dateFuture +"<br />");
+
+
+//###################################
+//nothing beyond this point
+function GetCount(ddate,iid){
+
+	dateNow = new Date();	//grab current date
+	amount = ddate.getTime() - dateNow.getTime();	//calc milliseconds between dates
+	delete dateNow;
+
+	// if time is already past
+	if(amount < 0){
+		document.getElementById(iid).innerHTML="Today!";
+	}
+	// else date is still good
+	else{
+		days=0;out="";
+
+		amount = Math.floor(amount/1000);//kill the "milliseconds" so just secs
+
+		days=Math.floor(amount/86400);//days
+		amount=amount%86400;
+
+		out += days +" "+((days==1)?"day until release.":"days until release.")+", ";
+		out = out.substr(0,out.length-2);
+		document.getElementById(iid).innerHTML=out;
+
+		setTimeout(function(){GetCount(ddate,iid)}, 1000);
+	}
+}
+
+
+dateFuture2 = new Date(2014,6,27,18,00,00);
+
+// TESTING: comment out the line below to print out the "dateFuture" for testing purposes
+//document.write(dateFuture +"<br />");
+
+
+//###################################
+//nothing beyond this point
+function GetCount1(addate,aiid){
+
+	adateNow = new Date();	//grab current date
+	aamount = addate.getTime() - adateNow.getTime();	//calc milliseconds between dates
+	delete adateNow;
+
+	// if time is already past
+	if(amount < 0){
+		document.getElementById(aiid).innerHTML="Today!";
+	}
+	// else date is still good
+	else{
+		days=0;out="";
+
+		amount = Math.floor(amount/1000);//kill the "milliseconds" so just secs
+
+		days=Math.floor(amount/86400);//days
+		amount=amount%86400;
+
+		out += days +" "+((days==1)?"day":"days")+", ";
+		out = out.substr(0,out.length-2);
+		document.getElementById(aiid).innerHTML=out;
+
+		setTimeout(function(){GetCount1(addate,aiid)}, 1000);
+	}
+}
+
+dateFuture3 = new Date(2014,6,29,18,00,00);
+
+// TESTING: comment out the line below to print out the "dateFuture" for testing purposes
+//document.write(dateFuture +"<br />");
+
+
+//###################################
+//nothing beyond this point
+function GetCount1(bddate,biid){
+
+	bdateNow = new Date();	//grab current date
+	bamount = bddate.getTime() - bdateNow.getTime();	//calc milliseconds between dates
+	delete bdateNow;
+
+	// if time is already past
+	if(bamount < 0){
+		document.getElementById(biid).innerHTML="Today!";
+	}
+	// else date is still good
+	else{
+		bdays=0;bout="";
+
+		bamount = Math.floor(bamount/1000);//kill the "milliseconds" so just secs
+
+		bdays=Math.floor(bamount/86400);//days
+		bamount=bamount%86400;
+
+		bout += bdays +" "+((bdays==1)?"day until release":"days until release")+", ";
+		bout = bout.substr(0,bout.length-2);
+		document.getElementById(biid).innerHTML=bout;
+
+		setTimeout(function(){GetCount2(bddate,biid)}, 1000);
+	}
+}
+
+
+window.onload=function(){
+		GetCount(dateFuture1, 'countbox1');
+	GetCount(dateFuture2, 'countbox2');
+	GetCount(dateFuture3, 'countbox3');
+	//you can add additional countdowns here (just make sure you create dateFuture2 and countbox2 etc for each)
+};
+</script>
 <ul data-role="listview" data-inset="true">
     <li><a href="#">
         <img src="img/ep1.png">
     <h2>Episode 1</h2>
-    <p>Released on day 2</p></a>
+    <p id="countbox1"></p></a>
     </li>
     <li><a href="#">
         <img src="img/ep2.png">
     <h2>Episode 2</h2>
-    <p>Released on day 6</p></a>
+    <p id="countbox2"></p></a>
     </li>
     <li><a href="#">
         <img src="img/ep3.png">
     <h2>Episode 3</h2>
-    <p>Released on day 10</p></a>
+    <p id="countbox3"></p></a>
     </li>
 </ul>
+
 
 		</div>
 	</div>
@@ -115,7 +261,9 @@
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        &nbsp;
+        <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps">Maps</a></li>
         <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
@@ -165,6 +313,58 @@ $(function() {
     
     
     
+    
+ <!--   <div data-role="page" id="photos-page" data-theme="a">
+        
+
+    
+   		 <div data-role="panel" id="articlespanel" data-display="reveal" data-theme="c">
+    <ul data-role="listview" data-theme="b">
+    	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
+        <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
+        <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        &nbsp;
+        <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
+        <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
+        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+    </ul>
+		</div><!-- /panel -->
+        
+        
+<!--		<div data-role="header" data-position="inline" >
+			<a class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#articlespanel">No text</a>
+				<h1>Barcelona 2014</h1>
+              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> 
+		</div>
+        
+        
+	<div data-role="content" id="photos-content">
+   		    <script id="photos-template" type="text/x-handlebars-template">
+				{{#posts}}
+					<a href="#{{id}}" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="{{thumbnail}}" alt="{{title}}" style="width:80%"></a>
+					<div data-role="popup" id="{{id}}" data-overlay-theme="a" data-theme="a" data-corners="false">
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="{{thumbnail_images.large.url}}" style="max-height:512px;" alt="Paris, France">
+</div>
+
+				{{/posts}}
+			</script>
+		
+          		<div id="photos-compiled"></div>
+          
+	</div> 
+
+</div> -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
         
     
     
@@ -180,7 +380,9 @@ $(function() {
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        &nbsp;
+        <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
         <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
@@ -217,7 +419,7 @@ $(function() {
             <div data-theme="a" data-role="header">
                 <a href="#articles" class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-back ui-nodisc-icon" data-transition="slide" data-direction="reverse">Back</a>                        
                 <h3>
-                    Movie Info
+                    
                 </h3>
             </div>        
             <div data-role="content">
@@ -230,12 +432,103 @@ $(function() {
                     <li>Content : {{this.content}}</li>
                     {{/.}}
                 </script>                  
-                <ul data-role="listview"  id="movie-data" data-theme="a">
+                <ul data-role="listview" id="movie-data" data-theme="a">
                     
                 </ul>
             </div>
     
         </div>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        	<div data-role="page" id="amts" data-theme="a">
+        
+
+    
+   		 <div data-role="panel" id="articlespanel" data-display="reveal" data-theme="c">
+    <ul data-role="listview" data-theme="b">
+    	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
+        <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
+        <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        &nbsp;
+        <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
+        <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
+        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+    </ul>
+		</div><!-- /panel -->
+        
+        
+		<div data-role="header" data-position="inline" >
+			<a class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#articlespanel">No text</a>
+				<h1>Barcelona 2014</h1>
+              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
+		</div>
+        
+        
+<div data-role="content">
+                <div class="amts-wrapper" data-iscroll>
+                    <script id="amts-template" type="text/x-handlebars-template">
+                        {{#.}}
+                        <li><a data-id="{{this.id}}"><img src="{{this.thumbnail}}"/><h3>{{this.title}}</h3><p>Posted on  {{this.date}}</p></a></li>
+                        {{/.}}
+                    </script>                      
+                    <ul data-role="listview"  id="amts-list" data-theme="a">
+                        
+                    </ul>
+                </div>
+            </div>            
+        </div>
+        
+        
+        
+        
+        
+        <div data-role="page" id="amts-headline">
+            <div data-theme="a" data-role="header">
+                <a href="#amts" class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-back ui-nodisc-icon" data-transition="slide" data-direction="reverse">Back</a>                        
+                <h3>
+                    
+                </h3>
+            </div>        
+            <div data-role="content">
+                <script id="amtsv-template" type="text/x-handlebars-template">
+                    {{#.}}
+                    <li><img src="{{this.thumbnail}}"/></li>
+                    <li>Title: {{this.title}}</li>
+                    <li>Author : {{this.author.name}}</li>
+                    <li>Excerpt : {{this.excerpt}}</li>
+                    <li>Content : {{this.content}}</li>
+                    {{/.}}
+                </script>                  
+                <ul data-role="listview"  id="amts-data" data-theme="a">
+                    
+                </ul>
+            </div>
+    
+        </div>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -245,7 +538,9 @@ $(function() {
 		<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
 		<li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#home" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        &nbsp;
+        <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule">Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
         <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>

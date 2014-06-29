@@ -48,9 +48,7 @@ var app = {
     }
 };
 
-$(document).on('pagebeforeshow', '#listview-page', function(){
-    parseRSS(); 
-});
+
  
 
 $(function() {
@@ -70,38 +68,7 @@ $(function() {
     });
 });
 
-$(document).on('pagebeforeshow', '#listview-page', function(){
-    parseRSS(); 
-});
 
-function parseRSS() {
-	 $.ajax({
-    url: 'http://www.barcelonaismedia.com/api/get_posts/',
-    type: 'GET',
-    dataType: 'json',
-    success: function(data){
-      console.log(data);
-	  showData(data);
-    },
-    error: function(data){
-      console.log(data);
-	  alert('Network error has occurred please try again!');
-    }
-  });
-}
-
-function showData(data)
-{
- var source   = $("#articles-template").html();
-  var template = Handlebars.compile(source);
-  var html = template(data);
-  $("#articleHandlebars").html(html);	
-  $("#listview-content").trigger('create');  
-  $("#listview-page").trigger('pagecreate');
-  $("#articleHandlebars ul").listview('refresh');
-  $("#articleHandlebars ul").listview().listview('refresh');
- }
- 
  
  
  
@@ -111,7 +78,7 @@ function showData(data)
             
             
             $.ajax({
-                url: "http://www.barcelonaismedia.com/api/get_posts/",
+                url: "http://www.barcelonaismedia.com/api/get_category_posts/?id=3",
                 dataType: "jsonp",
                 async: true,
                 success: function (result) {
@@ -154,3 +121,56 @@ var ajax = {
         $('#movie-list').listview('refresh');
     }
 }
+
+
+ $(document).on('pageinit', '#amts', function(){      
+    
+            
+            
+            $.ajax({
+                url: "http://www.barcelonaismedia.com/api/get_category_posts/?id=11",
+                dataType: "jsonp",
+                async: true,
+                success: function (result) {
+                    ajaxamts.parseJSONPamts(result);
+                },
+                error: function (request,error) {
+                    alert('Network error has occurred please try again!');
+                }
+            });          
+            
+});
+
+$(document).on('pagebeforeshow', '#amts-headline', function(){      
+    $('#amts-data').empty();
+    $.each(amtsInfo.result, function(i, row) {
+        if(row.id == amtsInfo.id) {
+            var amtsHandler = Handlebars.compile($("#amtsv-template").html());
+            $('#amts-data').html(amtsHandler(row));                
+        } 
+    });          
+    $('#amts-data').listview('refresh');     
+});
+
+$(document).on('vclick', '#amts-list li a', function(){  
+    amtsInfo.id = $(this).attr('data-id');
+    $.mobile.changePage( "#amts-headline", { transition: "slide", changeHash: false });
+});
+
+var amtsInfo = {
+    id : null,
+    result : null
+}
+
+var ajaxamts = {  
+    parseJSONPamts:function(result){  
+        amtsInfo.result = result.posts;
+        $('#amts-list').empty(); 
+        var amtsListHandler = Handlebars.compile($("#amts-template").html());
+        $('#amts-list').html(amtsListHandler(result.posts));         
+        $('#amts-list').listview('refresh');
+    }
+}
+
+
+
