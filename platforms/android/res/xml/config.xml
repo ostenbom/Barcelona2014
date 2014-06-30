@@ -8,8 +8,8 @@
     <description>
         The official app for the 76th International Session of the European Youth Parliament in Barcelona.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="contact@barcelonaismedia.com" href="http://www.barcelonaismedia.com">
+        Oliver Stenbom with the help of Issac Arvestad
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
@@ -55,4 +55,5 @@
     <access origin="*" />
     <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
     <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#333333" />
 </widget>

@@ -34,14 +34,13 @@ C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\ep1.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\ep2.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\ep3.png \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\code-photoswipe-jQuery-1.0.11.min.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\handlebars-v1.3.0.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\index.js \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.animate-enhanced.min.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2 \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.simpleWeather.min.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.ui.map.full.min.js \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\simple-inheritance.min.js \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.zweatherfeed.min.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.min.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.structure.css \
