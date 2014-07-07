@@ -75,7 +75,7 @@ var app = {
 	  
     },
     error: function(error) {
-      $("#weather").html('<p>'+error+'</p>');
+      $("#weather").html('<p>You dont seem to be connencted to the internet!</p>');
     }
   
   });
