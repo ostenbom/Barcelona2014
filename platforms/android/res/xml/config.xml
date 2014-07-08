@@ -4,6 +4,9 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
     <name>Barcelona 2014</name>
     <description>
         The official app for the 76th International Session of the European Youth Parliament in Barcelona.

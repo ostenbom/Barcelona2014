@@ -7,16 +7,13 @@
 	<link rel="stylesheet" href="theme/barcelona.min.css" />
 	<link rel="stylesheet" href="theme/jquery.mobile.icons.min.css" />
 	<link rel="stylesheet" href="js/jquery.mobile-1.4.2/jquery.mobile.custom.structure.css" />
-    <!--<link rel="stylesheet" href="css/photoswipe.css" />-->
+
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile-1.4.2/jquery.mobile.custom.js"></script>
     <script src="js/handlebars-v1.3.0.js"></script>
-<!--    <script src="js/code-photoswipe-jQuery-1.0.11.min.js"></script>
-    <script src="js/simple-inheritance.min.js"></script>
-    <script src="js/jquery.animate-enhanced.min.js"></script> -->
+
 	<script src="js/index.js"></script>
-    <script src="js/jquery.ui.map.full.min.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="js/leaflet.js"></script>
     <script src="js/jquery.simpleWeather.min.js"></script>
     
 </head>
@@ -32,14 +29,16 @@
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos" >Photos</a></li>
         &nbsp;
         <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
-        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#contact" >Contact</a></li>
         &nbsp;
         <li data-icon="recycle" class="ui-nodisc-icon"><a  href="#prepkit" >Academic Preparation</a></li>
+        &nbsp;
+        <img src="img/Mosaic-White.svg" style="width:40%; margin-left:30%; margin-right:auto; padding-top:20px;" />
     </ul>
 		</div><!-- /panel -->
         
@@ -52,6 +51,28 @@
         
         
 		<div data-role="content" data-theme="a">	
+        
+        <img src="img/header.png" style="width:100%" />
+        
+<div class="ui-grid-a">
+    <div class="ui-block-a"><a href="#articles" class="ui-btn ui-shadow ui-alt-icon ui-nodisc-icon ui-corner-all ui-icon-cloud ui-btn-icon-top">Articles</a></div>
+    <div class="ui-block-b"><a href="#amts" class="ui-btn ui-shadow ui-alt-icon ui-nodisc-icon ui-corner-all ui-icon-alert ui-btn-icon-top">Alerts</a></div>
+</div>
+<div class="ui-grid-a">
+    <div class="ui-block-a"><a href="#videos" class="ui-btn ui-shadow ui-alt-icon ui-nodisc-icon ui-corner-all ui-icon-video ui-btn-icon-top">Videos</a></div>
+    <div class="ui-block-b"><a href="#schedule" class="ui-btn ui-shadow ui-alt-icon ui-nodisc-icon ui-corner-all ui-icon-calendar ui-btn-icon-top">Schedule</a></div>
+</div>
+<div class="ui-grid-a">
+    <div class="ui-block-a"><a href="#photos" class="ui-btn ui-shadow ui-alt-icon ui-nodisc-icon ui-corner-all ui-icon-camera ui-btn-icon-top">Photos</a></div>
+    <div class="ui-block-b"><a href="#maps" class="ui-btn ui-shadow ui-alt-icon ui-nodisc-icon ui-corner-all ui-icon-location ui-btn-icon-top">Maps</a></div>
+</div>
+<div class="ui-grid-a">
+    <div class="ui-block-a"><a href="#prepkit" class="ui-btn ui-shadow ui-alt-icon ui-nodisc-icon ui-corner-all ui-icon-recycle ui-btn-icon-top">Prepkit</a></div>
+    <div class="ui-block-b"><a href="#contact" class="ui-btn ui-shadow ui-alt-icon ui-nodisc-icon ui-corner-all ui-icon-info ui-btn-icon-top">Contact</a></div>
+</div>
+
+
+
 			
             <div id="weather"></div>
            
@@ -69,14 +90,16 @@
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos">Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos" >Photos</a></li>
         &nbsp;
         <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
-        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#contact" >Contact</a></li>
         &nbsp;
         <li data-icon="recycle" class="ui-nodisc-icon"><a  href="#prepkit" >Academic Preparation</a></li>
+          &nbsp;
+        <img src="img/Mosaic-White.svg" style="width:40%; margin-left:30%; margin-right:auto; padding-top:20px;" />
     </ul>
 		</div><!-- /panel -->
         
@@ -117,7 +140,7 @@ function GetCount(ddate,iid){
 
 	// if time is already past
 	if(amount < 0){
-		document.getElementById(iid).innerHTML="Today!";
+		document.getElementById(iid).innerHTML="Released!";
 	}
 	// else date is still good
 	else{
@@ -153,7 +176,7 @@ function GetCount1(addate,aiid){
 
 	// if time is already past
 	if(amount < 0){
-		document.getElementById(aiid).innerHTML="Today!";
+		document.getElementById(aiid).innerHTML="Released!";
 	}
 	// else date is still good
 	else{
@@ -188,7 +211,7 @@ function GetCount1(bddate,biid){
 
 	// if time is already past
 	if(bamount < 0){
-		document.getElementById(biid).innerHTML="Today!";
+		document.getElementById(biid).innerHTML="Released!";
 	}
 	// else date is still good
 	else{
@@ -206,30 +229,110 @@ function GetCount1(bddate,biid){
 		setTimeout(function(){GetCount2(bddate,biid)}, 1000);
 	}
 }
+dateFuture4 = new Date(2014,6,31,18,00,00);
 
+// TESTING: comment out the line below to print out the "dateFuture" for testing purposes
+//document.write(dateFuture +"<br />");
+
+
+//###################################
+//nothing beyond this point
+function GetCount5(edate,eiid){
+
+	edateNow = new Date();	//grab current date
+	eamount = edate.getTime() - edateNow.getTime();	//calc milliseconds between dates
+	delete edateNow;
+
+	// if time is already past
+	if(eamount < 0){
+		document.getElementById(eiid).innerHTML="Released!";
+	}
+	// else date is still good
+	else{
+		edays=0;eout="";
+
+		eamount = Math.floor(bamount/1000);//kill the "milliseconds" so just secs
+
+		edays=Math.floor(eamount/86400);//days
+		eamount=eamount%86400;
+
+		eout += edays +" "+((edays==1)?"day until release":"days until release")+", ";
+		eout = eout.substr(0,eout.length-2);
+		document.getElementById(eiid).innerHTML=eout;
+
+		setTimeout(function(){GetCount5(edate,eiid)}, 1000);
+	}
+}
+dateFuture5 = new Date(2014,7,2,18,00,00);
+
+// TESTING: comment out the line below to print out the "dateFuture" for testing purposes
+//document.write(dateFuture +"<br />");
+
+
+//###################################
+//nothing beyond this point
+function GetCount6(fdate,fiid){
+
+	fdateNow = new Date();	//grab current date
+	famount = fdate.getTime() - fdateNow.getTime();	//calc milliseconds between dates
+	delete edateNow;
+
+	// if time is already past
+	if(famount < 0){
+		document.getElementById(fiid).innerHTML="Released!";
+	}
+	// else date is still good
+	else{
+		fdays=0;fout="";
+
+		famount = Math.floor(famount/1000);//kill the "milliseconds" so just secs
+
+		fdays=Math.floor(famount/86400);//days
+		famount=famount%86400;
+
+		fout += fdays +" "+((fdays==1)?"day until release":"days until release")+", ";
+		fout = fout.substr(0,fout.length-2);
+		document.getElementById(fiid).innerHTML=fout;
+
+		setTimeout(function(){GetCount5(fdate,fiid)}, 1000);
+	}
+}
 
 window.onload=function(){
 		GetCount(dateFuture1, 'countbox1');
 	GetCount(dateFuture2, 'countbox2');
 	GetCount(dateFuture3, 'countbox3');
+	GetCount(dateFuture4, 'countbox4');
+	GetCount(dateFuture5, 'countbox5');
+
 	//you can add additional countdowns here (just make sure you create dateFuture2 and countbox2 etc for each)
 };
 </script>
 <ul data-role="listview" data-inset="true">
-    <li><a href="#">
+    <li><a href="Episode/ep1.html">
         <img src="img/ep1.png">
     <h2>Episode 1</h2>
     <p id="countbox1"></p></a>
     </li>
-    <li><a href="#">
+    <li><a href="Episode/ep2.html">
         <img src="img/ep2.png">
     <h2>Episode 2</h2>
     <p id="countbox2"></p></a>
     </li>
-    <li><a href="#">
+    <li><a href="Episode/ep3.html">
         <img src="img/ep3.png">
     <h2>Episode 3</h2>
     <p id="countbox3"></p></a>
+    </li>
+    <li><a href="Episode/ep4.html">
+        <img src="img/ep4.png">
+    <h2>Episode 4</h2>
+    <p id="countbox4"></p></a>
+    </li>
+    <li><a href="Episode/ep5.html">
+        <img src="img/ep5.png">
+    <h2>Episode 5</h2>
+    <p id="countbox5"></p></a>
     </li>
 </ul>
 
@@ -238,7 +341,11 @@ window.onload=function(){
 	</div>
         
     
-    
+
+
+
+
+
     
     
 <div data-role="page" id="maps" data-theme="a">
@@ -249,14 +356,16 @@ window.onload=function(){
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos" >Photos</a></li>
         &nbsp;
         <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps">Maps</a></li>
-        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#contact" >Contact</a></li>
         &nbsp;
         <li data-icon="recycle" class="ui-nodisc-icon"><a  href="#prepkit" >Academic Preparation</a></li>
+          &nbsp;
+        <img src="img/Mosaic-White.svg" style="width:40%; margin-left:30%; margin-right:auto; padding-top:20px;" />
     </ul>
 		</div><!-- /panel -->
         
@@ -271,29 +380,10 @@ window.onload=function(){
  
         
 		<div data-role="content" data-theme="a">
-        <h3>Teambuilding Venue: Vilar Rural de Cardona</h3>
 
-<div id="map_canvas" style="height:300px; width:100%"></div>
-        <h3>Barcelona Accommodation: Residència Àgora</h3>
-<script>
-$(function() {
-    var poc = "41.439639,2.148895";
-    $('#map_barca').gmap({
-        'zoom': 7
-    }).bind('init', function(event, map) {
-        $('#map_barca').gmap('addMarker', {
-            'position': poc,
-            'bounds': true
-        }).click(function() {
-            content = 'The Barcelona Accommodation!';
-            $('#map_barca').gmap('openInfoWindow', {
-                'content': content
-            }, this);
-        });
-    });
-});
-</script>
-<div id="map_barca" style="height:300px; width:100%"></div> 
+
+
+<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/stenbom.infn9hgd/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic3RlbmJvbSIsImEiOiJhNDJwTmxvIn0.DctekFaiPEAooxG_9rXTog'></iframe>
 
 		</div>
 	</div>
@@ -304,49 +394,69 @@ $(function() {
     
     
     
- <!--   <div data-role="page" id="photos-page" data-theme="a">
-        
+
+
+
+<div data-role="page" id="photos" data-theme="a">
 
     
-   		 <div data-role="panel" id="articlespanel" data-display="reveal" data-theme="c">
+   		 <div data-role="panel" id="photospanel" data-display="reveal" data-theme="c">
     <ul data-role="listview" data-theme="b">
-    	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
+    	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#" >Photos</a></li>
         &nbsp;
         <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
-        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
-        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps">Maps</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#contact" >Contact</a></li>
+        &nbsp;
+        <li data-icon="recycle" class="ui-nodisc-icon"><a  href="#prepkit" >Academic Preparation</a></li>
+          &nbsp;
+        <img src="img/Mosaic-White.svg" style="width:40%; margin-left:30%; margin-right:auto; padding-top:20px;" />
     </ul>
 		</div><!-- /panel -->
         
         
-<!--		<div data-role="header" data-position="inline" >
-			<a class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#articlespanel">No text</a>
-				<h1>Barcelona 2014</h1>
-              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> 
+		<div data-role="header" data-position="inline" >
+			<a class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#photospanel">No text</a>
+				<h1>Photos</h1>
+              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
 		</div>
-        
-        
-	<div data-role="content" id="photos-content">
-   		    <script id="photos-template" type="text/x-handlebars-template">
-				{{#posts}}
-					<a href="#{{id}}" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="{{thumbnail}}" alt="{{title}}" style="width:80%"></a>
-					<div data-role="popup" id="{{id}}" data-overlay-theme="a" data-theme="a" data-corners="false">
-    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="{{thumbnail_images.large.url}}" style="max-height:512px;" alt="Paris, France">
-</div>
-
-				{{/posts}}
-			</script>
-		
-          		<div id="photos-compiled"></div>
-          
-	</div> 
-
-</div> -->
     
+    
+ <script id="articles-template" type="text/x-handlebars-template">
+
+  {{#posts}} 
+	<img src="{{thumbnail_images.large.url}}" style="width:100%" />
+  {{/posts}}
+
+</script>	
+        
+
+      
+           <!--         <script id="photos-template" type="text/x-handlebars-template">
+                        {{#.}}
+                        <img src="{{this.thumbnail}}" style="width:100%" />
+                        {{/.}}
+                    </script>                      
+                    <div id="photos-data"></div> -->
+                    
+                    
+               <div data-role="content" id="listview-content">	
+		<p>
+		  <div id="articleHandlebars" data-demo-html="true"></div>
+		</p>		
+	</div><!-- /content -->
+
+
+
+
+		</div>
+	</div>
+    
+
     
     
     
@@ -370,14 +480,16 @@ $(function() {
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos" >Photos</a></li>
         &nbsp;
         <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
-        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#contact" >Contact</a></li>
         &nbsp;
         <li data-icon="recycle" class="ui-nodisc-icon"><a  href="#prepkit" >Academic Preparation</a></li>
+          &nbsp;
+        <img src="img/Mosaic-White.svg" style="width:40%; margin-left:30%; margin-right:auto; padding-top:20px;" />
     </ul>
 		</div><!-- /panel -->
         
@@ -409,7 +521,7 @@ $(function() {
         
         <div data-role="page" id="headline">
             <div data-theme="a" data-role="header">
-                <a href="#articles" class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-back ui-nodisc-icon" data-transition="slide" data-direction="reverse">Back</a>                        
+                <a href="#articles" class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-back" data-transition="slide" data-direction="reverse">Back</a>                        
                 <h3>
                     
                 </h3>
@@ -417,11 +529,9 @@ $(function() {
             <div data-role="content">
                 <script id="movie-template" type="text/x-handlebars-template">
                     {{#.}}
-                    <li><img src="{{this.thumbnail}}"/></li>
-                    <li>Title: {{this.title}}</li>
-                    <li>Author : {{this.author.name}}</li>
-                    <li>Excerpt : {{this.excerpt}}</li>
-                    <li>Content : {{this.content}}</li>
+					<div> 
+    <object type="text/html" data="{{this.url}}" width="100%" height="10000px" style="overflow:auto;">
+    </object></div>
                     {{/.}}
                 </script>                  
                 <ul data-role="listview" id="movie-data" data-theme="a">
@@ -449,14 +559,16 @@ $(function() {
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos" >Photos</a></li>
         &nbsp;
         <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
-        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#contact" >Contact</a></li>
         &nbsp;
         <li data-icon="recycle" class="ui-nodisc-icon"><a  href="#prepkit" >Academic Preparation</a></li>
+          &nbsp;
+        <img src="img/Mosaic-White.svg" style="width:40%; margin-left:30%; margin-right:auto; padding-top:20px;" />
     </ul>
 		</div><!-- /panel -->
         
@@ -496,11 +608,9 @@ $(function() {
             <div data-role="content">
                 <script id="amtsv-template" type="text/x-handlebars-template">
                     {{#.}}
-                    <li><img src="{{this.thumbnail}}"/></li>
-                    <li>Title: {{this.title}}</li>
-                    <li>Author : {{this.author.name}}</li>
-                    <li>Excerpt : {{this.excerpt}}</li>
-                    <li>Content : {{this.content}}</li>
+                    <div> 
+    <object type="text/html" data="{{this.url}}" width="100%" height="10000px" style="overflow:auto;">
+    </object></div>
                     {{/.}}
                 </script>                  
                 <ul data-role="listview"  id="amts-data" data-theme="a">
@@ -532,14 +642,16 @@ $(function() {
 		<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
 		<li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos" >Photos</a></li>
         &nbsp;
         <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule">Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
-        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#contact" >Contact</a></li>
         &nbsp;
         <li data-icon="recycle" class="ui-nodisc-icon"><a  href="#prepkit" >Academic Preparation</a></li>
+          &nbsp;
+        <img src="img/Mosaic-White.svg" style="width:40%; margin-left:30%; margin-right:auto; padding-top:20px;" />
     </ul>
     </ul>
 		</div><!-- /panel -->
@@ -616,14 +728,16 @@ Evening: Farewell Gala Dinner</p>
     	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home">Home</a></li>
         <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
         <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
-        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos-page" >Photos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos" >Photos</a></li>
         &nbsp;
         <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
         <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
         <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps" >Maps</a></li>
-        <li data-icon="info" class="ui-nodisc-icon"><a  href="#home" >Contact</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#contact" >Contact</a></li>
         &nbsp;
         <li data-icon="recycle" class="ui-nodisc-icon"><a  href="#prepkit" >Academic Preparation</a></li>
+          &nbsp;
+        <img src="img/Mosaic-White.svg" style="width:40%; margin-left:30%; margin-right:auto; padding-top:20px;" />
     </ul>
 		</div><!-- /panel -->
         
@@ -659,6 +773,95 @@ Evening: Farewell Gala Dinner</p>
     
     
     
+    
+    
+    
+    <div data-role="page" id="contact" data-theme="a">
+
+    
+   		 <div data-role="panel" id="contactpanel" data-display="reveal" data-theme="c">
+    <ul data-role="listview" data-theme="b">
+    	<li data-icon="home" class="ui-nodisc-icon"><a  href="#home" >Home</a></li>
+        <li data-icon="cloud" class="ui-nodisc-icon"><a  href="#articles" >Articles</a></li>
+        <li data-icon="video" class="ui-nodisc-icon"><a  href="#videos" >Videos</a></li>
+        <li data-icon="camera" class="ui-nodisc-icon"><a  href="#photos" >Photos</a></li>
+        &nbsp;
+        <li data-icon="alert" class="ui-nodisc-icon"><a  href="#amts" >Announcements</a></li>
+        <li data-icon="calendar" class="ui-nodisc-icon"><a  href="#schedule" >Schedule</a></li>
+        <li data-icon="location" class="ui-nodisc-icon"><a  href="#maps">Maps</a></li>
+        <li data-icon="info" class="ui-nodisc-icon"><a  href="#contact" >Contact</a></li>
+        &nbsp;
+        <li data-icon="recycle" class="ui-nodisc-icon"><a  href="#prepkit" >Academic Preparation</a></li>
+          &nbsp;
+        <img src="img/Mosaic-White.svg" style="width:40%; margin-left:30%; margin-right:auto; padding-top:20px;" />
+    </ul>
+		</div><!-- /panel -->
+        
+        
+		<div data-role="header" data-position="inline" >
+			<a class="ui-btn ui-corner-all ui-btn-icon-notext ui-btn-b ui-icon-bars ui-nodisc-icon" href="#contactpanel">No text</a>
+				<h1>Maps</h1>
+              <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
+		</div>
+    
+    
+ 
+        
+		<div data-role="content" data-theme="a">
+        <img src="img/EYP_logo.png" style="width:60%; margin-right:20%; margin-left:20%" />
+        &nbsp;
+        <div style="text-align:center">
+         The European Youth Parliament is a programme of the Schwarzkopf Foundation (SF).
+         </div>
+        
+<h4 class="ui-bar ui-bar-a" style="background-color:#b02335">Session Hotline</h4>
+<div style="text-align:center"><strong>+0034 653 606 785</strong>
+</div>
+
+<h4 class="ui-bar ui-bar-a">Delegate Support and General Questions</h4>
+<div style="text-align:center"><strong>Sílvia Susach</strong> </br>
+<strong>Human Resources Team</strong> <br>
+info@barcelona2014is.com
+</div>
+
+<h4 class="ui-bar ui-bar-a">Travel-Specific Questions</h4>
+<div style="text-align:center">travel@barcelona2014is.com </div>
+
+
+
+<h4 class="ui-bar ui-bar-a">International Office of the EYP</h4>
+<div style="text-align:center">
+<strong>All general inquiries and questions:</strong> <br>
+info@eyp.org <br>
++49 (0)30 97 00 50 95 <br> <br>
+<strong>Stefan Vandenhende</strong> <br>
+Project Manager <br>
+s.vandenhende@eyp.org <br>
++49 (0)30 97 00 50 95
+</div>
+
+
+<h4 class="ui-bar ui-bar-a">Session Credits</h4>
+<div style="text-align:center">
+<strong>Head Organisers:</strong> <br>
+Albert Antolin <br>
+Oriol Comas <br>
+Sandra Castañer <br> <br>
+<strong>President:</strong> <br>
+Chris Hall <br> <br>
+<strong>Editors:</strong> <br>
+Saki Shinoda <br>
+Gustaf Danielsson <br> 
+</div>
+
+<h4 class="ui-bar ui-bar-a">App Credits</h4>
+<div style="text-align:center">
+Created by Oliver Stenbom for the 76th International Session of the EYP in Barcelona. <br> <br>
+© Oliver Stenbom. All Rights Reserved. <br>
+</div>
+<img src="img/header.png" style="width:100%" />
+		</div>
+	</div>
     
     
     

@@ -1,18 +1,43 @@
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\HelloWorld.ap_ \
  : C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable\icon.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-hdpi\icon.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-hdpi\ic_action_next_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-hdpi\ic_action_previous_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-hdpi\ic_action_remove.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-ldpi\icon.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-mdpi\icon.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-mdpi\ic_action_next_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-mdpi\ic_action_previous_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-mdpi\ic_action_remove.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-xhdpi\icon.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-xhdpi\ic_action_next_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-xhdpi\ic_action_previous_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-xhdpi\ic_action_remove.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-xxhdpi\ic_action_next_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-xxhdpi\ic_action_previous_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\drawable-xxhdpi\ic_action_remove.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\values\strings.xml \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\res\xml\config.xml \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable\icon.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-hdpi\icon.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-hdpi\ic_action_next_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-hdpi\ic_action_previous_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-hdpi\ic_action_remove.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-ldpi\icon.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-mdpi\icon.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-mdpi\ic_action_next_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-mdpi\ic_action_previous_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-mdpi\ic_action_remove.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-xhdpi\icon.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-xhdpi\ic_action_next_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-xhdpi\ic_action_previous_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-xhdpi\ic_action_remove.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-xxhdpi\ic_action_next_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-xxhdpi\ic_action_previous_item.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\ant-build\res\drawable-xxhdpi\ic_action_remove.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\_where-is-www.txt \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\config.xml \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\cordova.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\cordova_plugins.js \
@@ -22,10 +47,27 @@ C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img 
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\index.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\phonegap.js \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\plugins \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\spec \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\spec.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\theme \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\AFCO.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\AFET.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\CULT.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\ECON I.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\ECON II.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\EMPL.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\ENVI I.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\ENVI II.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\FEMM I.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\FEMM II.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\INTA.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\ITRE.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\LIBE.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\SEDE.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\TRAN.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\untitled.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\index.css \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\photoswipe-icons.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\photoswipe-icons@2x.png \
@@ -48,6 +90,9 @@ C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\j
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.theme.css \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.theme.min.css \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.icons.min.css \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\plugins\org.apache.cordova.inappbrowser \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\plugins\org.apache.cordova.inappbrowser\www \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\plugins\org.apache.cordova.inappbrowser\www\inappbrowser.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\screen \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android \

@@ -70,4 +70,7 @@
     <access origin="*" />
     <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
     <preference name="StatusBarOverlaysWebView" value="false" />
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
 </widget>

@@ -62,21 +62,20 @@ var app = {
 	timeout: 1,
     success: function(weather) {
 	  html =  '<h3 class="ui-bar ui-bar-a">Todays weather in Barcelona:</h3>'
-      html += '<h2>'+weather.alt.temp+'&deg;'+weather.alt.unit+'</h2>';
+      html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.alt.temp+'&deg;'+weather.alt.unit+'</a>';
+      html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.currently+'</a>';
+      html += '<h3 class="ui-bar ui-bar-a">Tomorrows forecast:</h3>'
+      html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.forecast[1].text+'</a>';
 	  html += '<div class="ui-grid-a">'
-      html += '<div class="ui-block-a"><a class="ui-shadow ui-btn ui-corner-all">'+weather.currently+'</a></div>';
-      html += '<div class="ui-block-b"><a class="ui-shadow ui-btn ui-corner-all">Sunset: '+weather.sunset+'</a></div></div>';
-      html += '<h3>Tomorrow</h3>'
-      html += '<ul><li>High: '+weather.forecast[1].alt.high+'</li>';
-      html += '<li class="currently">'+weather.forecast[1].text+'</li>';
-      html += '<li>Low: '+weather.forecast[1].alt.low+'</li></ul>';
+      html += '<div class="ui-block-a"><a class="ui-shadow ui-btn ui-corner-all">High: '+weather.forecast[1].alt.high+'</a></div>';
+      html += '<div class="ui-block-b"><a class="ui-shadow ui-btn ui-corner-all">Low: '+weather.forecast[1].alt.low+'</a></div></div>';
 	  
 	 
       $("#weather").html(html);
 	  
     },
     error: function(error) {
-      $("#weather").html('<p>'+error+'</p>');
+      $("#weather").html('<p>You dont seem to be connencted to the internet!</p>');
     }
   
   });
