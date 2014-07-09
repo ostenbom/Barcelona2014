@@ -42,6 +42,7 @@ C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\conf
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\cordova.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\cordova_plugins.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Episode \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\icon.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\index.html \
@@ -62,20 +63,44 @@ C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Acad
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\ENVI II.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\FEMM I.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\FEMM II.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\INTA.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\ITRE.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\LIBE.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\SEDE.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\TRAN.html \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\untitled.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image001.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image002.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image003.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image004.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image005.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image006.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image007.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image008.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image009.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image010.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image011.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image012.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\image013.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Academic Prep\Images\LIBE.PNG \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\index.css \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\photoswipe-icons.png \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\photoswipe-icons@2x.png \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\photoswipe-loader.gif \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\css\photoswipe.css \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Episode\ep1.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Episode\ep2.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Episode\ep3.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Episode\ep4.html \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\Episode\ep5.html \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\ep1.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\ep2.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\ep3.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\ep4.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\ep5.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\EYP_logo.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\header.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\Mosaic-White.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\Mosaic-White.svg \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\Mosaic.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\Mosaic.svg \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\img\sad.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\handlebars-v1.3.0.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\index.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.js \
@@ -83,6 +108,7 @@ C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\j
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.simpleWeather.min.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.ui.map.full.min.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.zweatherfeed.min.js \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\leaflet.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.min.js \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\js\jquery.mobile-1.4.2\jquery.mobile.custom.structure.css \
@@ -103,10 +129,13 @@ C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\tizen \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\webos \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\windows-phone \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\icon-36-ldpi.png \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\icon-48-mdpi.png \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\icon-72-hdpi.png \
-C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\icon-96-xhdpi.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\fr-xxhdpi.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\hdpi.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\ldpi.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\mdpi.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\xhdpi.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\xxhdpi.png \
+C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\android\xxxhdpi.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\bada\icon-128.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\bada-wac\icon-48-type5.png \
 C:\Users\Oliver\Documents\GitHub\Barcelona2014\platforms\android\assets\www\res\icon\bada-wac\icon-50-type3.png \

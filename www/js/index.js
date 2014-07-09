@@ -103,7 +103,7 @@ var app = {
                     ajax.parseJSONP(result);
                 },
                 error: function (request,error) {
-                    alert('Network error has occurred please try again!');
+					$('#movie-list').html('<img src="img/sad.png" style="width: 100%;" />');
                 }
             });          
             
@@ -158,7 +158,7 @@ var ajax = {
                     ajaxamts.parseJSONPamts(result);
                 },
                 error: function (request,error) {
-                    alert('Network error has occurred please try again!');
+                    $('#amts-list').html('<img src="img/sad.png" style="width: 100%;" />');
                 }
             });          
             
@@ -218,8 +218,7 @@ function parseRSS() {
 	  showData(data);
     },
     error: function(data){
-      console.log(data);
-	  alert('Network error has occurred please try again!');
+     $('#articleHandlebars').html('<img src="img/sad.png" style="width: 100%;" />');
     }
   });
 }
@@ -235,3 +234,5 @@ function showData(data)
   $("#articleHandlebars ul").listview('refresh');
   $("#articleHandlebars ul").listview().listview('refresh');
  }
+ 
+ 

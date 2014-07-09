@@ -61,7 +61,7 @@ var app = {
     unit: 'f',
 	timeout: 1,
     success: function(weather) {
-	  html =  '<h3 class="ui-bar ui-bar-a">Todays weather in Barcelona:</h3>'
+	  html =  '<h3 class="ui-bar ui-bar-a" style="background-color:#b02335">Todays weather in Barcelona:</h3>'
       html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.alt.temp+'&deg;'+weather.alt.unit+'</a>';
       html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.currently+'</a>';
       html += '<h3 class="ui-bar ui-bar-a">Tomorrows forecast:</h3>'
@@ -85,22 +85,6 @@ var app = {
 
     });
 
-$(function() {
-    var poi = "41.904080,1.666449";
-    $('#map_canvas').gmap({
-        'zoom': 7
-    }).bind('init', function(event, map) {
-        $('#map_canvas').gmap('addMarker', {
-            'position': poi,
-            'bounds': true
-        }).click(function() {
-            content = 'Teambuildning venue';
-            $('#map_canvas').gmap('openInfoWindow', {
-                'content': content
-            }, this);
-        });
-    });
-});
 
 
  
@@ -119,7 +103,7 @@ $(function() {
                     ajax.parseJSONP(result);
                 },
                 error: function (request,error) {
-                    alert('Network error has occurred please try again!');
+					$('#movie-list').html('<img src="img/sad.png" style="width: 100%;" />');
                 }
             });          
             
@@ -174,7 +158,7 @@ var ajax = {
                     ajaxamts.parseJSONPamts(result);
                 },
                 error: function (request,error) {
-                    alert('Network error has occurred please try again!');
+                    $('#amts-list').html('<img src="img/sad.png" style="width: 100%;" />');
                 }
             });          
             
@@ -213,3 +197,53 @@ var ajaxamts = {
 
 
 
+
+
+
+
+
+
+
+$(document).on('pagebeforeshow', '#photos', function(){
+    parseRSS(); 
+});
+
+function parseRSS() {
+	 $.ajax({
+    url: 'http://www.barcelonaismedia.com/api/get_category_posts/?id=10',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data){
+      console.log(data);
+	  showData(data);
+    },
+    error: function(data){
+     $('#articleHandlebars').html('<img src="img/sad.png" style="width: 100%;" />');
+    }
+  });
+}
+
+function showData(data)
+{
+ var source   = $("#articles-template").html();
+  var template = Handlebars.compile(source);
+  var html = template(data);
+  $("#articleHandlebars").html(html);	
+  $("#listview-content").trigger('create');  
+  $("#photos").trigger('pagecreate');
+  $("#articleHandlebars ul").listview('refresh');
+  $("#articleHandlebars ul").listview().listview('refresh');
+ }
+ 
+ 
+$(document).on('pagebeforeshow', '#maps', function(){       
+          
+        var status = navigator.onLine;
+        if (status = true) {
+			$("#maps-data").html("<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/stenbom.infn9hgd/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic3RlbmJvbSIsImEiOiJhNDJwTmxvIn0.DctekFaiPEAooxG_9rXTog'></iframe>");
+			} 
+		else {
+			$('#maps-data').html('<img src="img/sad.png" style="width: 100%;" />');
+			}      
+    
+});
