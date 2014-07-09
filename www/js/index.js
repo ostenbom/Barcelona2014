@@ -236,3 +236,129 @@ function showData(data)
  }
  
  
+$( document ).on( "pageinit", "#home", function() {
+    $( document ).on( "swiperight", "#home", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#homepanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+$( document ).on( "pageinit", "#videos", function() {
+    $( document ).on( "swiperight", "#videos", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#videospanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#maps", function() {
+    $( document ).on( "swiperight", "#maps", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#mapspanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#photos", function() {
+    $( document ).on( "swiperight", "#photos", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#photospanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#articles", function() {
+    $( document ).on( "swiperight", "#articles", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#articlespanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#amts", function() {
+    $( document ).on( "swiperight", "#amts", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#amtspanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+
+$( document ).on( "pageinit", "#schedule", function() {
+    $( document ).on( "swiperight", "#schedule", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#schedulepanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#prepkit", function() {
+    $( document ).on( "swiperight", "#prepkit", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#preppanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#contact", function() {
+    $( document ).on( "swiperight", "#contact", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#contactpanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
