@@ -12,8 +12,8 @@
         The official app for the 76th International Session of the European Youth Parliament in Barcelona.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://www.barcelonaismedia.com" email="contact@barcelonaismedia.com">
+        Oliver Stenbom with the help of Issac Arvestad
     </author>
 
     <!--
@@ -54,16 +54,39 @@
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
-    <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
-    <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
-    <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
-    <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
+    <icon src="res/icon/android/ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+	<icon src="res/icon/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+	<icon src="res/icon/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+	<icon src="res/icon/android/xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+	<icon src="res/icon/android/xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi" />
+	<icon src="res/icon/android/fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
-    <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
-    <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
-    <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
-    <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
+    <platform name="ios">
+              <!-- iOS 7.0+ -->
+              <!-- iPhone / iPod Touch  -->
+              <icon src="res/icon/ios/icon-60.png" width="60" height="60" />
+              <icon src="res/icon/ios/icon-60@2x.png" width="120" height="120" />
+              <!-- iPad -->
+              <icon src="res/icon/ios/icon-76.png" width="76" height="76" />
+              <icon src="res/icon/ios/icon-76@2x.png" width="152" height="152" />
+              <!-- iOS 6.1 -->
+              <!-- Spotlight Icon -->
+              <icon src="res/icon/ios/icon-40.png" width="40" height="40" />
+              <icon src="res/icon/ios/icon-40@2x.png" width="80" height="80" />
+              <!-- iPhone / iPod Touch -->
+              <icon src="res/icon/ios/icon.png" width="57" height="57" />
+              <icon src="res/icon/ios/icon@2x.png" width="114" height="114" />
+              <!-- iPad -->
+              <icon src="res/icon/ios/icon-72.png" width="72" height="72" />
+              <icon src="res/icon/ios/icon-72@2x.png" width="144" height="144" />
+              <!-- iPhone Spotlight and Settings Icon -->
+              <icon src="res/icon/ios/icon-small.png" width="29" height="29" />
+              <icon src="res/icon/ios/icon-small@2x.png" width="58" height="58" />
+              <!-- iPad Spotlight and Settings Icon -->
+              <icon src="res/icon/ios/icon-50.png" width="50" height="50" />
+              <icon src="res/icon/ios/icon-50@2x.png" width="100" height="100" />
+     </platform>
     <icon src="res/icon/webos/icon-64.png"          gap:platform="webos" />
     <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
@@ -73,11 +96,20 @@
     <gap:splash src="res/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
     <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
     <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
+	<gap:splash src="res/screen/android/screen-ldpi-landscape.png"  gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="res/screen/android/screen-mdpi-landscape.png"  gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="res/screen/android/screen-hdpi-landscape.png"  gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="res/screen/android/screen-xhdpi-landscape.png" gap:platform="android" gap:density="xhdpi" />
     <gap:splash src="res/screen/blackberry/screen-225.png"         gap:platform="blackberry" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
     <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
     <gap:splash src="res/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
+	<gap:splash src="res/screen/ios/screen-ipad-landscape-2x.png"     gap:platform="ios"     width="2008" height="1536" />
+	<gap:splash src="res/screen/ios/screen-ipad-portrait-2x.png"     gap:platform="ios"     width="1536" height="2008" />
+	<gap:splash src="res/screen/ios/screen-iphone-landscape.png"     gap:platform="ios"     width="480" height="320" />
+	<gap:splash src="res/screen/ios/screen-iphone-landscape-2x.png"     gap:platform="ios"     width="960" height="640" />
+	<gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png"     gap:platform="ios"     width="640" height="1136" />
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
 
     <!--
@@ -97,5 +129,6 @@
     -->
 	<gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
 	<preference name="StatusBarOverlaysWebView" value="false" />
+	<preference name="StatusBarBackgroundColor" value="#333333" />
 
 </widget>

@@ -48,60 +48,45 @@ var app = {
     }
 };
 
-$(document).on('pagebeforeshow', '#listview-page', function(){
-    parseRSS(); 
-});
- 
 
-$(function() {
-    var poi = "41.904080,1.666449";
-    $('#map_canvas').gmap({
-        'zoom': 7
-    }).bind('init', function(event, map) {
-        $('#map_canvas').gmap('addMarker', {
-            'position': poi,
-            'bounds': true
-        }).click(function() {
-            content = 'Teambuildning venue';
-            $('#map_canvas').gmap('openInfoWindow', {
-                'content': content
-            }, this);
-        });
-    });
-});
 
-$(document).on('pagebeforeshow', '#listview-page', function(){
-    parseRSS(); 
-});
+  $(document).on('pagebeforeshow', '#home', function(){     
 
-function parseRSS() {
-	 $.ajax({
-    url: 'http://www.barcelonaismedia.com/api/get_posts/',
-    type: 'GET',
-    dataType: 'json',
-    success: function(data){
-      console.log(data);
-	  showData(data);
+
+        $(document).ready(function() {
+		 
+  $.simpleWeather({
+    location: 'Barcelona',
+    woeid: '',
+    unit: 'f',
+	timeout: 1,
+    success: function(weather) {
+	  html =  '<h3 class="ui-bar ui-bar-a" style="background-color:#b02335">Todays weather in Barcelona:</h3>'
+      html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.alt.temp+'&deg;'+weather.alt.unit+'</a>';
+      html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.currently+'</a>';
+      html += '<h3 class="ui-bar ui-bar-a">Tomorrows forecast:</h3>'
+      html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.forecast[1].text+'</a>';
+	  html += '<div class="ui-grid-a">'
+      html += '<div class="ui-block-a"><a class="ui-shadow ui-btn ui-corner-all">High: '+weather.forecast[1].alt.high+'</a></div>';
+      html += '<div class="ui-block-b"><a class="ui-shadow ui-btn ui-corner-all">Low: '+weather.forecast[1].alt.low+'</a></div></div>';
+	  
+	 
+      $("#weather").html(html);
+	  
     },
-    error: function(data){
-      console.log(data);
-	  alert('Network error has occurred please try again!');
+    error: function(error) {
+      $("#weather").html('<p>You dont seem to be connencted to the internet!</p>');
     }
+  
   });
-}
+		
+		
+});
 
-function showData(data)
-{
- var source   = $("#articles-template").html();
-  var template = Handlebars.compile(source);
-  var html = template(data);
-  $("#articleHandlebars").html(html);	
-  $("#listview-content").trigger('create');  
-  $("#listview-page").trigger('pagecreate');
-  $("#articleHandlebars ul").listview('refresh');
-  $("#articleHandlebars ul").listview().listview('refresh');
- }
- 
+    });
+
+
+
  
  
  
@@ -111,14 +96,14 @@ function showData(data)
             
             
             $.ajax({
-                url: "http://www.barcelonaismedia.com/api/get_posts/",
+                url: "http://www.barcelonaismedia.com/api/get_category_posts/?id=3",
                 dataType: "jsonp",
                 async: true,
                 success: function (result) {
                     ajax.parseJSONP(result);
                 },
                 error: function (request,error) {
-                    alert('Network error has occurred please try again!');
+					$('#movie-list').html('<img src="img/sad.png" style="width: 100%;" />');
                 }
             });          
             
@@ -154,3 +139,226 @@ var ajax = {
         $('#movie-list').listview('refresh');
     }
 }
+
+
+
+
+
+
+
+ $(document).on('pageinit', '#amts', function(){      
+    
+            
+            
+            $.ajax({
+                url: "http://www.barcelonaismedia.com/api/get_category_posts/?id=11",
+                dataType: "jsonp",
+                async: true,
+                success: function (result) {
+                    ajaxamts.parseJSONPamts(result);
+                },
+                error: function (request,error) {
+                    $('#amts-list').html('<img src="img/sad.png" style="width: 100%;" />');
+                }
+            });          
+            
+});
+
+$(document).on('pagebeforeshow', '#amts-headline', function(){      
+    $('#amts-data').empty();
+    $.each(amtsInfo.result, function(i, row) {
+        if(row.id == amtsInfo.id) {
+            var amtsHandler = Handlebars.compile($("#amtsv-template").html());
+            $('#amts-data').html(amtsHandler(row));                
+        } 
+    });          
+    $('#amts-data').listview('refresh');     
+});
+
+$(document).on('vclick', '#amts-list li a', function(){  
+    amtsInfo.id = $(this).attr('data-id');
+    $.mobile.changePage( "#amts-headline", { transition: "slide", changeHash: false });
+});
+
+var amtsInfo = {
+    id : null,
+    result : null
+}
+
+var ajaxamts = {  
+    parseJSONPamts:function(result){  
+        amtsInfo.result = result.posts;
+        $('#amts-list').empty(); 
+        var amtsListHandler = Handlebars.compile($("#amts-template").html());
+        $('#amts-list').html(amtsListHandler(result.posts));         
+        $('#amts-list').listview('refresh');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+$(document).on('pagebeforeshow', '#photos', function(){
+    parseRSS(); 
+});
+
+function parseRSS() {
+	 $.ajax({
+    url: 'http://www.barcelonaismedia.com/api/get_category_posts/?id=10',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data){
+      console.log(data);
+	  showData(data);
+    },
+    error: function(data){
+     $('#articleHandlebars').html('<img src="img/sad.png" style="width: 100%;" />');
+    }
+  });
+}
+
+function showData(data)
+{
+ var source   = $("#articles-template").html();
+  var template = Handlebars.compile(source);
+  var html = template(data);
+  $("#articleHandlebars").html(html);	
+  $("#listview-content").trigger('create');  
+  $("#photos").trigger('pagecreate');
+  $("#articleHandlebars ul").listview('refresh');
+  $("#articleHandlebars ul").listview().listview('refresh');
+ }
+ 
+ 
+$( document ).on( "pageinit", "#home", function() {
+    $( document ).on( "swiperight", "#home", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#homepanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+$( document ).on( "pageinit", "#videos", function() {
+    $( document ).on( "swiperight", "#videos", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#videospanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#maps", function() {
+    $( document ).on( "swiperight", "#maps", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#mapspanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#photos", function() {
+    $( document ).on( "swiperight", "#photos", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#photospanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#articles", function() {
+    $( document ).on( "swiperight", "#articles", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#articlespanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#amts", function() {
+    $( document ).on( "swiperight", "#amts", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#amtspanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+
+$( document ).on( "pageinit", "#schedule", function() {
+    $( document ).on( "swiperight", "#schedule", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#schedulepanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#prepkit", function() {
+    $( document ).on( "swiperight", "#prepkit", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#preppanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+
+$( document ).on( "pageinit", "#contact", function() {
+    $( document ).on( "swiperight", "#contact", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#contactpanel" ).panel( "open" );
+            } 
+        }
+    });
+});
+
+

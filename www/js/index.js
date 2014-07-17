@@ -61,10 +61,10 @@ var app = {
     unit: 'f',
 	timeout: 1,
     success: function(weather) {
-	  html =  '<h3 class="ui-bar ui-bar-a" style="background-color:#b02335">Todays weather in Barcelona:</h3>'
+	  html =  '<h3 class="ui-bar ui-bar-a" style="background-color:#b02335">'+"Today's weather in Barcelona:</h3>"
       html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.alt.temp+'&deg;'+weather.alt.unit+'</a>';
       html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.currently+'</a>';
-      html += '<h3 class="ui-bar ui-bar-a">Tomorrows forecast:</h3>'
+      html += '<h3 class="ui-bar ui-bar-a">'+"Tomorrow's forecast:</h3>"
       html += '<a class="ui-shadow ui-btn ui-corner-all">'+weather.forecast[1].text+'</a>';
 	  html += '<div class="ui-grid-a">'
       html += '<div class="ui-block-a"><a class="ui-shadow ui-btn ui-corner-all">High: '+weather.forecast[1].alt.high+'</a></div>';
@@ -96,7 +96,7 @@ var app = {
             
             
             $.ajax({
-                url: "http://www.barcelonaismedia.com/api/get_category_posts/?id=3",
+                url: "http://www.barcelonaismedia.com/?json=get_category_posts&id=3&count=100",
                 dataType: "jsonp",
                 async: true,
                 success: function (result) {
@@ -151,7 +151,7 @@ var ajax = {
             
             
             $.ajax({
-                url: "http://www.barcelonaismedia.com/api/get_category_posts/?id=11",
+                url: "http://www.barcelonaismedia.com/?json=get_category_posts&id=11&count=40",
                 dataType: "jsonp",
                 async: true,
                 success: function (result) {
@@ -210,7 +210,7 @@ $(document).on('pagebeforeshow', '#photos', function(){
 
 function parseRSS() {
 	 $.ajax({
-    url: 'http://www.barcelonaismedia.com/api/get_category_posts/?id=10',
+    url: 'http://www.barcelonaismedia.com/?json=get_category_posts&id=10&count=20',
     type: 'GET',
     dataType: 'json',
     success: function(data){
