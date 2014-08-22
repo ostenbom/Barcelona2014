@@ -48,7 +48,7 @@ var app = {
     }
 };
 
-
+// calling the weather function for the home page. Simple weather makes it pretty easy to decide what you want the weather to look like.
 
   $(document).on('pagebeforeshow', '#home', function(){     
 
@@ -86,7 +86,7 @@ var app = {
     });
 
 
-
+// these are the functions to download articles/photos/announcements from the website using JSON from barcelonaismedia.com. Handlebars then compiles it and displays it on the app, the only problem I see at the moment is that there has to be a page split of 10-15 articles and then you can either click for a new page or more automatically loads later, loading 50-60 articels or 20-30 photos at once is too much.
  
  
  
@@ -234,6 +234,15 @@ function showData(data)
   $("#articleHandlebars ul").listview('refresh');
   $("#articleHandlebars ul").listview().listview('refresh');
  }
+ 
+ 
+ 
+ 
+ 
+ //Swype functions to be able to open the side panel with a swype, there has to be one for each page, just like the panels
+ 
+ 
+ 
  
  
 $( document ).on( "pageinit", "#home", function() {
