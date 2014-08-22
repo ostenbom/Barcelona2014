@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<!-- Here all relevant files are called, including the stylesheets, jquery mobile itself, handlebars (used for getting JSON from a website) leaflet (which I ended up not using) and simpleweather (weather on the front page). This is how the page knows where to get all external code from -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Barcelona 2014</title>
@@ -19,9 +21,9 @@
 </head>
 <body>
 
+<!-- Index.html actually includes all pages in the app except for the episodes and the academic prep kit, this is beacause it saves time, as the page is initialised when the app is started and therefore most pages are already in the DOM, meaning less waiting time. -->
 
-
-
+<!-- Each page needs a few things, 1) a data-role="page" 2) a unique side panel (jquery mobile cant call side panels from one place, so you need to make a new panel for each page) 3) A data-role="header" 4) a data-role="content" -->
 	<div data-role="page" id="home" data-theme="a">
     
    		 <div data-role="panel" id="homepanel" data-display="reveal" data-theme="c">
@@ -71,7 +73,7 @@
     <div class="ui-block-b"><a href="#contact" class="ui-btn ui-shadow ui-alt-icon ui-nodisc-icon ui-corner-all ui-icon-info ui-btn-icon-top">Contact</a></div>
 </div>
 
-
+<!-- call the weather function which is in index.js -->
 
 			
             <div id="weather"></div>
@@ -110,7 +112,10 @@
               <!--  <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-back" data-rel="back">No text</a> -->
 		</div>
         
-        
+  <!-- For each episode, there is a date counter that counts how many days are left until the episode is released and displays already released if the counter is up. -->    
+  
+  
+    
 		<div data-role="content" data-theme="a">	
         <script type="text/javascript">
 //######################################################################################
@@ -345,7 +350,7 @@ window.onload=function(){
 
 
 
-
+<!-- the maps are a simple iframe from an online map creator called mapbox, that allows you to customise your map after the app has been released, which is great. -->
     
     
 <div data-role="page" id="maps" data-theme="a">
@@ -394,7 +399,7 @@ window.onload=function(){
     
     
     
-
+<!-- Photos, articles and annoucements all pull JSON from barcelonaismedia.com using a simple wordpress plugin called JSON API by Dan Phiffer. Of course, any JSON is possible to implement using handlebars. -->
 
 
 <div data-role="page" id="photos" data-theme="a">
@@ -1033,7 +1038,13 @@ window.onload=function(){
 		</div>
     </div>
     
-    
+  
+  
+  
+  
+  
+  
+  <!-- The prep kit documents are in an different folder because of their length and that only one or two will be used on average per user, so there is no need in calling all of them in the start. -->  
     
     	<div data-role="page" id="prepkit" data-theme="a">
     
