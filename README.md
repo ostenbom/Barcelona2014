@@ -24,8 +24,12 @@ Notes:
 
 This app is aimed at simplicity across many platforms. It is written only in html, css and javascript. This code can then be packaged using Phonegap/Cordova for use with iPhone/Android, despite the lack of native hardware acceleration, I found that this app doesn't need so much power, and writing for Phonegap saved me a lot of time.
 
+This app is built on a jquery mobile framework.
+
 In the end, the android app was easily alligned with the right certificate using the phonegap build platform, it took about 10 minutes.
 
 The iPhone app however required xcode on a mac to fix the time/status bar in IOS 7 which proved difficult to solve using phonegap. Phonegap build would also not accept my certificates, despite them working in xcode.
 
 This repo is the full dev app, but only barcelonabuild, a separate repo, was used for phonegap build as it only contains the must-have files.
+
+The theme is easily changable and customisable, just copy the unminimised barcelona theme css from the theme folder and paste it to http://themeroller.jquerymobile.com/ under "import" and edit to your hearts content.
